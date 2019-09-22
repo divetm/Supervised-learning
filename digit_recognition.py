@@ -254,3 +254,25 @@ labels = ["Decision Tree", "Neural Network", "Boosting", "SVM", "KNN"]
 plt.bar(classifiers, accuracy_scores, align='center')
 plt.xticks(classifiers, labels)
 plt.show()
+
+# get learning curves for iterative algorithms (using the best parameters found with the GridSearch) over iterations
+# Neural Network
+nn_classifier = MLPClassifier(activation="relu", alpha=1000000, hidden_layer_sizes=(100,), learning_rate_init=1)
+nn_classifier.fit(X_train, y_train)
+plt.figure()
+plt.ylabel('Error')
+plt.xlabel('Epochs')
+plt.title("MLPClassifier Learning rate =" + str(1))
+plt.plot(nn_classifier.loss_curve_)
+plt.show()
+
+# Boosted Decision Tree
+boosted_tree_classifier = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(criterion="gini", splitter="best",
+                                         max_depth=2, min_samples_split=0.9), n_estimators=1000, learning_rate=1)
+boosted_tree_classifier.fit(X_train, y_train)
+plt.figure()
+plt.ylabel('Accuracy')
+plt.xlabel('Iterations')
+plt.title("Boosted Tree Learning rate = 1, min_samples_split = 0.9")
+plt.plot(list(boosted_tree_classifier.staged_score(X_train,y_train)))
+plt.show()
