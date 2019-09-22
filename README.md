@@ -71,7 +71,8 @@ Use this shell script to create a Compute Engine instance and run your python sc
     --scopes userinfo-email,cloud-platform \
     --metadata-from-file startup-script=gce/startup-script.sh \
     --zone us-central1-f \
-    --tags http-server```
+    --tags http-server
+```
     
 You will need to have saved the ```startup-script.sh``` in the directory where you execute this command. This script is the following:
 
@@ -130,7 +131,8 @@ EOF
 supervisorctl reread
 supervisorctl update
 
-# Application should now be running under supervisor```
+# Application should now be running under supervisor
+```
 
 Replace ```[YOUR_REPO_NAME]``` with the name of the repo you created in the previous steps and ```[YOUR_PYTHON_SCRIPT_NAME]``` with the name of the python script you want to run. (This part can generate some errors due to the paths that can change from one project to another).
 
