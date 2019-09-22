@@ -13,7 +13,7 @@ This file contains all the necessary packages for this project. (Running ```pip 
 
 The datasets
 ----
-These datasets (```train_32x32.mat```and ```tumor_classification_data.csv```) are the datasets described in the assignment paper. They can also be downloaded from their original sources:
+These datasets (```train_32x32.mat```and ```tumor_classification_data.csv```) are the datasets described in the assignment paper. They can be downloaded from their original sources:
 * http://ufldl.stanford.edu/housenumbers/train_32x32.mat
 * https://www.kaggle.com/uciml/breast-cancer-wisconsin-data
 
