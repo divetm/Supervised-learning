@@ -5,7 +5,7 @@ Please clone this git to a local project if you want to replicate the experiment
 
 Virtual Environment
 ----
-This project contains a virtual environment folder [```venv```](placeholder). This folder contains all the files needed to create a virtual environment in which the project is supposed to run. Because of the very large number of files inside of it we are forced to compress the folder into a .zip file in order to upload it to Github. Simply download it and unzip it if necessary, please.
+This project contains a virtual environment folder ```venv``` (the folder is too heavy for Github - click on the link [here](https://drive.google.com/drive/folders/18PUCs6r501OiEO5NszSBAuqcJbiPGLdn?usp=sharing) to download it from my Google Drive). This folder contains all the files needed to create a virtual environment in which the project is supposed to run.
 
 requirements.txt
 ----
