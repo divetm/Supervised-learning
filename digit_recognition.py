@@ -29,13 +29,13 @@ print(y[img_index])
 X = X.reshape(X.shape[0] * X.shape[1] * X.shape[2], X.shape[3]).T
 y = y.reshape(y.shape[0], )
 
+# shuffle to avoid underlying distributions
+X, y = shuffle(X, y, random_state=26)
+
 # taking a smaller amount of data than given by "The Street View House Numbers (SVHN) Dataset" (73257 originally given)
 
 X = X[:5000][:]
 y = y[:5000]
-
-# shuffle to avoid underlying distributions
-X, y = shuffle(X, y, random_state=26)
 
 # split set into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=26)
