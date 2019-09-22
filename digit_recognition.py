@@ -211,8 +211,6 @@ get_validation_curve(k_neighbors_classifier, "n_neighbors", np.linspace(1, 3000,
 get_validation_curve(k_neighbors_classifier, "algorithm", np.asarray(["auto", "ball_tree", "kd_tree", "brute"]))
 get_validation_curve(k_neighbors_classifier, "p", np.asarray([1, 2], dtype=np.int64))
 
-# TODO: get learning curves for iterative algorithms over iterations
-
 # splitting data into training set and testing set
 X_train = preprocessing.scale(X_train)
 
