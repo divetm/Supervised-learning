@@ -224,11 +224,11 @@ def grid_search_and_train_model(classifier, tuned_parameters):
     return accuracy_score(y_test, y_pred)
 
 
-decision_tree_accuracy = grid_search_and_train_model(decision_tree_classifier, {"max_depth": [20], "min_samples_split": [0.7]})
-neural_network_accuracy = grid_search_and_train_model(neural_network_classifier, {"activation": ["relu"], "hidden_layer_sizes": [(100,)], "alpha": [100000]})
-boosting_accuracy = grid_search_and_train_model(boosting_classifier, {"n_estimators": [1000], "learning_rate": [1], "base_estimator__min_samples_split": [0.9], "base_estimator__max_depth": [2]})
-svm_accuracy = grid_search_and_train_model(svm_classifier, {'degree': [1], 'C': [1000]})
-k_neighbors_accuracy = grid_search_and_train_model(k_neighbors_classifier, {"n_neighbors": [3], "p": [1]})
+decision_tree_accuracy = grid_search_and_train_model(decision_tree_classifier, {"max_depth": np.linspace(15, 25, 10, endpoint=True, dtype=np.int64), "min_samples_split": [0.1, 0.2, 0.3]})
+neural_network_accuracy = grid_search_and_train_model(neural_network_classifier, {"activation": ["relu"], "hidden_layer_sizes": [(100,), (50,), (200,), (50, 50), (100, 100), (50, 150, 50), (50, 50, 50, 50), (150, 50, 50), (150, 50)], "alpha": np.linspace(100000, 1000000, 10, endpoint=True, dtype=np.int64)})
+boosting_accuracy = grid_search_and_train_model(boosting_classifier, {"n_estimators": np.linspace(1, 1000, 10, endpoint=True, dtype=np.int64), "learning_rate": [1], "base_estimator__min_samples_split": np.linspace(0.1, 1, 10, endpoint=True, dtype=np.int64), "base_estimator__max_depth": np.linspace(1, 6, 6, endpoint=True, dtype=np.int64)})
+svm_accuracy = grid_search_and_train_model(svm_classifier, {'degree': [1], 'C': np.linspace(1000, 10000, 10, endpoint=True, dtype=np.int64)})
+k_neighbors_accuracy = grid_search_and_train_model(k_neighbors_classifier, {"n_neighbors": np.linspace(1, 50, 10, endpoint=True, dtype=np.int64), "p": [1]})
 
 classifiers = [1, 2, 3, 4, 5]
 accuracy_scores = [decision_tree_accuracy, neural_network_accuracy, boosting_accuracy, svm_accuracy, k_neighbors_accuracy]
