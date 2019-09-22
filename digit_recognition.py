@@ -61,7 +61,7 @@ boosting_classifier = AdaBoostClassifier(base_estimator=DecisionTreeClassifier(c
                                          class_weight=None, presort=False), n_estimators=50, learning_rate=1.0,
                                          algorithm="SAMME.R", random_state=None)
 
-svm_classifier = SVC(C=1.0, kernel="rbf", degree=3, gamma="auto_deprecated", coef0=0.0, shrinking=True,
+svm_classifier = SVC(C=1.0, kernel="rbf", degree=3, gamma="scale", coef0=0.0, shrinking=True,
                      probability=False, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1,
                      decision_function_shape="ovr", random_state=None)
 
