@@ -64,7 +64,8 @@ You will also need to activate Google Compute Engine API on your account.
 
 Use this shell script to create a Compute Engine instance and run your python script in it (you can change the zone and machine-type tags values if needed) :
 
-```gcloud compute instances create my-app-instance \
+```
+    gcloud compute instances create my-app-instance \
     --image-family=debian-9 \
     --image-project=debian-cloud \
     --machine-type=g1-small \
